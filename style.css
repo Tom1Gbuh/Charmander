@@ -19,6 +19,7 @@
         max-width: 100px;
         height: auto;
         position: absolute;
+        top: 10px;
         left: 10px;
     }
     
@@ -28,6 +29,16 @@
         margin: 0;
         font-family: 'Bebas Neue';
         letter-spacing: 6px;
+    }
+    
+    @media screen and (max-width: 732px) {
+        #Logo {
+            position: relative;
+            margin-left: 40%;
+        }
+        #Logo-title {
+            font-size: 90px;
+        }
     }
     /* NAVIGATION */
     
@@ -62,13 +73,15 @@
     
     .intro-container {
         background-color: orange;
-        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
     }
     
     .image-container {
         max-width: 600px;
         margin: 0;
-        float: left;
         padding: 3%;
         box-sizing: border-box;
     }
@@ -82,7 +95,6 @@
     }
     
     .intro-text {
-        float: left;
         max-width: 600px;
         margin: 0;
         padding: 3%;
@@ -108,16 +120,58 @@
     .gallery-container {
         background-color: orange;
         overflow: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
     
     .gallery-image {
-        width: 25%;
-        height: 160px;
-        float: left;
+        width: 300px;
+        height: 180px;
         padding: 5px;
         box-sizing: border-box;
         outline: 5px solid black;
         outline-offset: -10px;
+    }
+    /* FULL SCREEN IMAGE MODAL */
+    
+    .modal {
+        z-index: 1;
+        display: none;
+        padding-top: 10px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .modal-content {
+        margin: auto;
+        display: block;
+        position: absolute;
+        max-height: 100%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+    
+    .close {
+        text-decoration: none;
+        float: right;
+        font-size: 60px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        padding-right: 3%;
+    }
+    
+    #fullsize-img {
+        max-height: 90vh;
+        width: auto;
     }
     /* ABOUT */
     
@@ -125,4 +179,19 @@
         background-color: orange;
         overflow: auto;
         text-align: center;
+        font-family: 'Bebas Neue';
+        padding-inline: 12px;
+        padding-bottom: 12px;
+    }
+    /* YOUTUBE VIDEO */
+    
+    .video {
+        outline: 5px solid orangered;
+    }
+    
+    @media screen and (max-width: 963px) {
+        .video {
+            width: auto;
+            height: auto;
+        }
     }

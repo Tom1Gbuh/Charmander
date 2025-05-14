@@ -35,12 +35,30 @@
 
         <!-- GALLERY AREA -->
         <article class="gallery-container">
-            <a href="./images/p3.jpg"><img class="gallery-image" src="./images/p3.jpg" alt="Smiling T-posing Charmander"></a>
-            <a href="./images/p4.jpg"><img class="gallery-image" src="./images/p4.jpg" alt="Flying Fire-spitting Charmander"></a>
-            <a href="./images/p5.jpg"><img class="gallery-image" src="./images/p5.jpg" alt="Charmander Jumping"></a>
-            <a href="./images/p6.jpg"><img class="gallery-image" src="./images/p6.jpg" alt="Tail-swinging Charmander"></a>
 
+            <div class="thumb-container">
+                <img src="./images/p3.jpg" class="gallery-image" alt="Smiling T-posing Charmander" onclick="openModal(this)">
+            </div>
 
+            <div class="thumb-container">
+                <img src="./images/p4.jpg" class="gallery-image" alt="Flying Fire-spitting Charmander" onclick="openModal(this)">
+            </div>
+
+            <div class="thumb-container">
+                <img src="./images/p5.jpg" class="gallery-image" alt="Charmander Jumping" onclick="openModal(this)">
+            </div>
+
+            <div class="thumb-container">
+                <img src="./images/p6.jpg" class="gallery-image" alt="Tail-swinging Charmander" onclick="openModal(this)">
+            </div>
+
+            <!-- FULLSCREEN IMAGE MODAL - HIDDEN BY DEFAULT -->
+            <div id="modal1" class="modal" onclick="this.style.display='none'">
+                <span class="close">&times;</span>
+                <div class="modal-content">
+                    <img id="fullsize-img" alt="Charmander">
+                </div>
+            </div>
 
 
         </article>
@@ -52,5 +70,12 @@
 
     </main>
 </body>
+
+<script>
+    function openModal(item) {
+        document.getElementById("fullsize-img").src = item.src;
+        document.getElementById("modal1").style.display = "block"
+    }
+</script>
 
 </html>

@@ -9,7 +9,11 @@
         margin-right: auto;
         overflow: auto;
     }
-    
+
+    img {
+        max-width: 100%;
+    }
+
     header {
         background-color: orangered;
         position: relative;
